@@ -123,8 +123,6 @@ The main tasks for this exercise are as follows:
 
    > **Note**: If this is the first time you are launching the Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
 
-   > **Note**: You can find the full script containing all commands described below in **F:\\Labfiles\\AZ100\\Mod03\\az-100-03_deploy_azure_vm.ps1**
-
 1. In the Cloud Shell pane, run the following command:
 
    ```
@@ -133,15 +131,6 @@ The main tasks for this exercise are as follows:
    ```
 
    > **Note**: This sets the values of variables designating the Azure VM name and its size
-
-1. In the Cloud Shell pane, run the following commands:
-
-   ```
-   $resourceGroup = Get-AzureRmResourceGroup -Name 'az1000301-RG'
-   $location = $resourceGroup.Location
-   ```
-
-   > **Note**: These commands set the values of variables designating the target resource group and its location.
 
 1. In the Cloud Shell pane, run the following commands:
 
