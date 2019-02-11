@@ -107,7 +107,7 @@ The main tasks for this exercise are as follows:
 
 1. From the **az1000101-RG** blade, display its **Access control (IAM)** blade.
 
-1. From the **az1000101-RG - Access control (IAM)** blade, display the **Add permissions** blade.
+1. From the **az1000101-RG - Access control (IAM)** blade, display the **Add role assignment**  blade.
 
 1. From the **Add permissions** blade, create the following role assignment:
 
@@ -176,6 +176,18 @@ The main tasks for this exercise are as follows:
 
 1. Note the value of the `<custom-label>` that resulted in the successful outcome. You will need it in the next task
 
+1. Run these commands:
+
+   ```
+   Register-AzureRmResourceProvider –ProviderNamespace Microsoft.Network
+   ```
+
+   ```
+   Register-AzureRmResourceProvider –ProviderNamespace Microsoft.Compute
+   ```
+Note: These cmdlets register the Azure Resource Manager Microsoft.Network and Microsoft.Compute resource providers. This is a one-time operation (per subscription) required when using Azure Resource Manager templates to deploy resources managed by these resource providers (if these resource providers have not been yet registered).
+
+
 
 #### Task 2: Attempt an automated deployment of a policy non-compliant Azure VM as a delegated admin
 
@@ -185,11 +197,11 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **Resource groups** blade and note that you can view only the resource group **az1000101-RG**.
 
-1. In the Azure portal, navigate to the **New** blade. 
+1. In the Azure portal, navigate to the **Create a resource** blade. 
 
-1. From the **New** blade, search Azure Marketplace for **Template deployment**.
+1. From the **Create a resource** blade, search Azure Marketplace for **Template deployment**.
 
-1. Use the list of search results to navigate to the **Custom deployment** blade.
+1. Use the list of search results to navigate to the **Deploy a custom template** blade.
 
 1. On the **Custom deployment** blade, in the **Load a GitHub quickstart template** drop-down list, select the **101-vm-simple-linux** entry and navigate to the **Edit template** blade.
 
