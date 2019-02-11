@@ -203,7 +203,7 @@ The main tasks for this exercise are as follows:
 
     - Subscription: the same subscription you selected in the previous exercise
 
-    - Resource group: **az1000102-RG**
+    - Resource group: **az1000101-RG**
 
     - Location: the name of the Azure region which you selected in the previous exercise
 
