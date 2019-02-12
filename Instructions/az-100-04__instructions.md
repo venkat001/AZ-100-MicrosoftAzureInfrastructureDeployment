@@ -75,9 +75,9 @@ The main tasks for this exercise are as follows:
 
     - Vm Size: **Standard_DS1_v2**
 
-    - Vm0Name: **az1000401-vm0**
+    - Vm1Name: **az1000401-vm0**
 
-    - Vm1Name: **az1000401-vm1**
+    - Vm2Name: **az1000401-vm1**
 
     - Admin Username: **Student**
 
