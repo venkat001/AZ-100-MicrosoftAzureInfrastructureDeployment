@@ -41,11 +41,24 @@ The main tasks for this exercise are as follows:
 
 1. From the lab virtual machine, start Microsoft Edge, browse to the Azure portal at [**http://portal.azure.com**](http://portal.azure.com) and sign in by using a Microsoft account that has the Owner role in the Azure subscription you intend to use in this lab.
 
-1. In the Azure portal, navigate to the **New** blade.
+1. In the Azure portal, navigate to the **Subscriptions** blade.
 
-1. From the **New** blade, search Azure Marketplace for **Template deployment**.
+1. From the **Subscriptions** blade, navigate to the blade displaying properties of your Azure subscription.
 
-1. Use the list of search results to navigate to the **Custom deployment** blade.
+1. From the blade displaying the properties of your subscription, navigate to its **Resource providers** blade.
+
+1. On the **Resource providers** blade, register the following resource providers (if these resource providers have not been yet registered):
+- Microsoft.Network
+- Microsoft.Compute
+- Microsoft.Storage
+
+**Note:** This step registers the Azure Resource Manager Microsoft.Network, Microsoft.Compute, and Microsoft.Storage resource providers. This is a one-time operation (per subscription) required when using Azure Resource Manager templates to deploy resources managed by these resource providers (if these resource providers have not been yet registered).
+
+1. In the Azure portal, navigate to the **Create a resource** blade.
+
+1. From the **Create a resource** blade, search Azure Marketplace for **Template deployment**.
+
+1. Use the list of search results to navigate to the **Deploy a custom template** blade.
 
 1. On the **Custom deployment** blade, select the **Build your own template in the editor**.
 
@@ -105,9 +118,9 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create Azure Storage accounts
 
-1. In the Azure portal, navigate to the **New** blade.
+1. In the Azure portal, navigate to the **Create a resource** blade.
 
-1. From the **New** blade, search Azure Marketplace for **Storage account - blob, file, table, queue**.
+1. From the **Create a resource** blade, search Azure Marketplace for **Storage account**.
 
 1. Use the list of search results to navigate to the **Create storage account** blade.
 
@@ -131,13 +144,13 @@ The main tasks for this exercise are as follows:
 
     - Allow access from: **All networks**
 
-    - Hierarchical namespace: **Disabled**
+    - **DATALAKE STORAGE GEN2** Hierarchical namespace: **Disabled**
 
 1. Do not wait for the storage account to be provisioned but proceed to the next step.
 
-1. In the Azure portal, navigate to the **New** blade.
+1. In the Azure portal, navigate to the **Create a resource** blade.
 
-1. From the **New** blade, search Azure Marketplace for **Storage account - blob, file, table, queue**.
+1. From the **Create a resource** blade, search Azure Marketplace for **Storage account**.
 
 1. Use the list of search results to navigate to the **Create storage account** blade.
 
@@ -162,8 +175,8 @@ The main tasks for this exercise are as follows:
     - Secure transfer required: **Disabled**
 
     - Allow access from: **All networks**
-
-    - Hierarchical namespace: **Disabled**
+    
+    - **DATALAKE STORAGE GEN2** Hierarchical namespace: **Disabled**
 
 1. Wait for the storage account to be provisioned. This should take less than a minute.
 
