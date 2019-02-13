@@ -144,7 +144,7 @@ The main tasks for this exercise are as follows:
 
     - Allow access from: **All networks**
 
-    - **DATALAKE STORAGE GEN2** Hierarchical namespace: **Disabled**
+    - **Data Lake Storage Gen2** Hierarchical namespace: **Disabled**
 
 1. Do not wait for the storage account to be provisioned but proceed to the next step.
 
@@ -176,7 +176,7 @@ The main tasks for this exercise are as follows:
 
     - Allow access from: **All networks**
     
-    - **DATALAKE STORAGE GEN2** Hierarchical namespace: **Disabled**
+    - **Data Lake Storage Gen2** Hierarchical namespace: **Disabled**
 
 1. Wait for the storage account to be provisioned. This should take less than a minute.
 
