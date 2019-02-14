@@ -138,24 +138,24 @@ The main tasks for this exercise are as follows:
 
 1. From the **AdatumSync - Overview** blade, display the **AdatumSync - Custom domain names** blade. 
 
-1. On the **AdatumSync - Custom domain names** blade, identify the primary, default DNS domain name associated the Azure AD tenant. Note its value - you will need it in the next task.
+1. On the **AdatumSync - Custom domain names** blade, identify the primary, default DNS domain name associated with the Azure AD tenant. Note its value - you will need it in the next task.
 
 1. From the **AdatumSync - Custom domain names** blade, add the **adatum.com** custom domain.
 
 1. On the **adatum.com** blade, review the information necessary to perform verification of the Azure AD domain name.
 
-   > **Note**: You will not be able to complete the validation process because you do not own the **adatum.com** DNS domain name. This will not prevent you from synchronizing **adatum.com** Active Directory domain with the Azure AD tenant. You will use for this purpose, the default primary DNS name of the Azure AD tenant (the name ending with the **onmicrosoft.com** suffix), which you identified earlier in this task. However, keep in mind that, as the result, the DNS domain name of Active Directory domain and the DNS name of the Azure AD tenant will differ. This means that Adatum users will need to use different names when signing in to Active Directory domain and when signing in to Azure AD tenant.
+   > **Note**: You will not be able to complete the validation process because you do not own the **adatum.com** DNS domain name. This will not prevent you from synchronizing the **adatum.com** Active Directory domain with the Azure AD tenant. You will use for this purpose the default primary DNS name of the Azure AD tenant (the name ending with the **onmicrosoft.com** suffix), which you identified earlier in this task. However, keep in mind that, as a result, the DNS domain name of the Active Directory domain and the DNS name of the Azure AD tenant will differ. This means that Adatum users will need to use different names when signing in to the Active Directory domain and when signing in to Azure AD tenant.
 
 
 #### Task 3: Create an Azure AD user with the Global Administrator role
 
-1. In the Azure portal, navigate to the **Users - All users** blade of the AdatumSync Azure AD tenant.
+1. In the Azure portal, navigate to the **Users - All users** blade of the **AdatumSync** Azure AD tenant.
 
 1. From the **Users - All users** blade, create a new user with the following settings:
 
     - Name: **syncadmin**
 
-    - User name: **syncadmin@***<DNS-domain-name>* where *<DNS-domain-name>* represents the default primary DNS domain name you identified earlier in the previous task. Take a note of this user name. You will need it later in this lab.
+    - User name: **syncadmin@***<DNS-domain-name>* where *<DNS-domain-name>* represents the default primary DNS domain name you identified in the previous task. Take a note of this user name. You will need it later in this lab.
 
     - Profile: **Not configured**
 
@@ -173,7 +173,7 @@ The main tasks for this exercise are as follows:
 
 1. In the new browser window, navigate to the Azure portal and sign in using the **syncadmin** user account. When prompted, change the password to a new value.
 
-   > **Note**: You will need to provide a fully qualified name of the **syncadmin** user account, including the Azure AD tenant DNS domain name. 
+   > **Note**: You will need to provide the fully qualified name of the **syncadmin** user account, including the Azure AD tenant DNS domain name. 
 
 1. Sign out as **syncadmin** and close the InPrivate browser window.
 
@@ -241,7 +241,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **User sign-in** page, ensure that only the **Password Hash Synchronization** is enabled.
 
-1. When prompted to conect to Azure AD, authenticate by using the credentials of the **syncadmin** account you created in the previous exercise.
+1. When prompted to connect to Azure AD, authenticate by using the credentials of the **syncadmin** account you created in the previous exercise.
 
 1. When prompted to connect your directories, add the **adatum.com** forest, choose the option to **Create new AD account**, and authenticate by using the following credentials:
 
