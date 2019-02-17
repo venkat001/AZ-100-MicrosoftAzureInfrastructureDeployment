@@ -41,11 +41,11 @@ The main tasks for this exercise are as follows:
 
 1. From the lab virtual machine, start Microsoft Edge, browse to the Azure portal at [**http://portal.azure.com**](http://portal.azure.com) and sign in by using a Microsoft account that has the Owner role in the Azure subscription you intend to use in this lab and is a Global Administrator of the Azure AD tenant associated with that subscription.
 
-1. In the Azure portal, navigate to the Azure AD tenant blade 
+1. In the Azure portal, navigate to the **Azure Active Directory** blade 
 
-1. From the Azure AD tenant blade, navigate to the custom domain names blade and identify the primary DNS domain name associated the Azure AD tenant. Note its value - you will need it later in this task.
+1. From the **Azure Active Directory** blade, navigate to the **Custom domain names** blade and identify the primary DNS domain name associated the Azure AD tenant. Note its value - you will need it later in this task.
 
-1. From the Azure AD custom domain names blade, navigate to the **Users - All users** blade. 
+1. From the Azure AD **Custom domain names** blade, navigate to the **Users - All users** blade. 
 
 1. From the **Users - All users** blade, create a new user with the following settings:
 
@@ -107,13 +107,13 @@ The main tasks for this exercise are as follows:
 
 1. From the **az1000101-RG** blade, display its **Access control (IAM)** blade.
 
-1. From the **az1000101-RG - Access control (IAM)** blade, display the **Add role assignment**  blade.
+1. From the **az1000101-RG - Access control (IAM)** blade, display the **Role assignments**  blade.
 
-1. From the **Add permissions** blade, create the following role assignment:
+1. From the **Role assignments** blade, create the following **role assignment**:
 
     - Role: **Contributor**
 
-    - Assign access to: **Azure AD user, group, or application**
+    - Assign access to: **Azure AD user, group, or service principal**
 
     - Select: **az1001 Contributors**
 
@@ -228,6 +228,8 @@ Note: These cmdlets register the Azure Resource Manager Microsoft.Network and Mi
     - Ubuntu OS Version: accept the default value
 
     - Location: accept the default value
+    
+1. Note that the intiation of the deployment fails. Navigate to the **Errors** blade and note that the deployment of the resource is not allowed by the policy **Allowed virtual machine SKUs**.   
 
 
 #### Task 3: Perform an automated deployment of a policy compliant Azure VM as a delegated admin
