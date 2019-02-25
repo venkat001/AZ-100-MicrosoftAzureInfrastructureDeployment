@@ -50,9 +50,9 @@ The main tasks for this exercise are as follows:
 
 1. From the lab virtual machine, start Microsoft Edge, browse to the Azure portal at [**http://portal.azure.com**](http://portal.azure.com) and sign in by using a Microsoft account that has the Owner role in the Azure subscription you intend to use in this lab.
 
-1. In the Azure portal, navigate to the **New** blade.
+1. In the Azure portal, navigate to the **Create a resource** blade.
 
-1. From the **New** blade, search Azure Marketplace for **Windows Server 2016 Datacenter**.
+1. From the **Create a resource** blade, search Azure Marketplace for **Windows Server 2016 Datacenter**.
 
 1. Use the list of search results to navigate to the **Create a virtual machine** blade for a deployment of the Windows Server 2016 Datacenter Azure Marketplace image.
 
@@ -217,11 +217,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Deploy two Azure VMs running Linux into an availability set by using an Azure Resource Manager template
 
-1. In the Azure portal, navigate to the **New** blade.
+1. In the Azure portal, navigate to the **Create a resource** blade.
 
-1. From the **New** blade, search Azure Marketplace for **Template deployment**.
+1. From the **Create a resource** blade, search Azure Marketplace for **Template deployment**.
 
-1. Use the list of search results to navigate to the **Custom deployment** blade.
+1. Use the list of search results to navigate to the **Deploy a custom template** blade.
 
 1. On the **Custom deployment** blade, select the **Build your own template in the editor**.
 
@@ -418,9 +418,9 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Deploy an Azure VM scale set
 
-1. In the Azure portal, navigate to the **New** blade.
+1. In the Azure portal, navigate to the **Create a resource** blade.
 
-1. From the **New** blade, search Azure Marketplace for **Virtual machine scale set**.
+1. From the **Create a resource** blade, search Azure Marketplace for **Virtual machine scale set**.
 
 1. Use the list of search results to navigate to the **Create virtual machine scale set** blade.
 
