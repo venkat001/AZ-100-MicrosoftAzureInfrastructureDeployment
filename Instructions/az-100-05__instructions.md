@@ -59,11 +59,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Deploy an Azure VM hosting an Active Directory domain controller by using an Azure Resource Manager template
 
-1. In the Azure portal, navigate to the **New** blade. 
+1. In the Azure portal, navigate to the **Create a resource** blade. 
 
-1. From the **New** blade, search Azure Marketplace for **Template deployment**.
+1. From the **Create a resource** blade, search Azure Marketplace for **Template deployment**.
 
-1. Use the list of search results to navigate to the **Custom deployment** blade.
+1. Use the list of search results to navigate to the **Deploy a custom template** blade.
 
 1. On the **Custom deployment** blade, in the **Load a GitHub quickstart template** drop-down list and select the **active-directory-new-domain** entry.
 
@@ -109,9 +109,9 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure Active Directory (AD) tenant
 
-1. In the Azure portal, navigate to the **New** blade. 
+1. In the Azure portal, navigate to the **Create a resource** blade. 
 
-1. From the **New** blade, search Azure Marketplace for **Azure Active Directory**.
+1. From the **Create a resource** blade, search Azure Marketplace for **Azure Active Directory**.
 
 1. Use the list of search results to navigate to the **Create directory** blade.
 
