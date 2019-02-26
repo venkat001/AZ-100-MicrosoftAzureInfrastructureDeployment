@@ -5,7 +5,7 @@ Estimated Time: 30 minutes
 
 All tasks in this lab are performed from the Azure portal (including a PowerShell Cloud Shell session)  
 
-   > **Note**: When not using Cloud Shell, the lab virtual machine must have Azure PowerShell module installed [**https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-6.12.0**](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-6.12.0)
+   > **Note**: When not using Cloud Shell, the lab virtual machine must have the Azure PowerShell 1.2.0 module (or newer) installed [https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-1.2.0](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-1.2.0)
 
 Lab files: none
 
@@ -169,7 +169,7 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, run the following command, substituting the placeholder `<custom-label>` with any string which is likely to be unique and the placeholder `<location-of-az1000101-RG>` with the name of the Azure region in which you created the **az1000101-RG** resource group.
 
    ```
-   Test-AzureRmDnsAvailability -DomainNameLabel <custom-label> -Location '<location-of-az1000101-RG>'
+   Test-AzDnsAvailability -DomainNameLabel <custom-label> -Location '<location-of-az1000101-RG>'
    ```
 
 1. Verify that the command returned **True**. If not, rerun the same command with a different value of the `<custom-label>` until the command returns **True**. 
@@ -179,11 +179,11 @@ The main tasks for this exercise are as follows:
 1. Run these commands:
 
    ```
-   Register-AzureRmResourceProvider –ProviderNamespace Microsoft.Network
+   Register-AzResourceProvider –ProviderNamespace Microsoft.Network
    ```
 
    ```
-   Register-AzureRmResourceProvider –ProviderNamespace Microsoft.Compute
+   Register-AzResourceProvider –ProviderNamespace Microsoft.Compute
    ```
 Note: These cmdlets register the Azure Resource Manager Microsoft.Network and Microsoft.Compute resource providers. This is a one-time operation (per subscription) required when using Azure Resource Manager templates to deploy resources managed by these resource providers (if these resource providers have not been yet registered).
 

@@ -5,13 +5,13 @@ Estimated Time: 30 minutes
 
 All tasks in this lab are performed from the Azure portal (including a PowerShell Cloud Shell session) except for Excercise 2 Task 2, which includes steps performed from a Remote Desktop session to an Azure VM
 
-   > **Note**: When not using Cloud Shell, the lab virtual machine must have Azure PowerShell module installed [**https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-6.12.0**](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-6.12.0)
+   > **Note**: When not using Cloud Shell, the lab virtual machine must have the Azure PowerShell 1.2.0 module (or newer) installed [https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-1.2.0](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-1.2.0)
 
 Lab files: 
 
--  **F:\\Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.json**
+-  **Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.json**
 
--  **F:\\Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.parameters.json**
+-  **Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.parameters.json**
 
 ### Scenario
   
@@ -62,7 +62,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Custom deployment** blade, select the **Build your own template in the editor**.
 
-1. From the **Edit template** blade, load the template file **F:\\Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.json**. 
+1. From the **Edit template** blade, load the template file **Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.json**. 
 
    > **Note**: Review the content of the template and note that it defines deployment of an Azure VM hosting Windows Server 2016 Datacenter.
 
@@ -70,7 +70,7 @@ The main tasks for this exercise are as follows:
 
 1. From the **Custom deployment** blade, navigate to the **Edit parameters** blade.
 
-1. From the **Edit parameters** blade, load the parameters file **F:\\Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.parameters.json**. 
+1. From the **Edit parameters** blade, load the parameters file **Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.parameters.json**. 
 
 1. Save the parameters and return to the **Custom deployment** blade. 
 
@@ -214,7 +214,7 @@ The main tasks for this exercise are as follows:
 
 1. From the **Blobs** blade of the first storage account, create a new container named **az1000202-container** with the **Public access level** set to **Private (no anonymous access)**. 
 
-1. From the **az1000202-container** blade, upload **F:\\Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.json** and **F:\\Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.parameters.json** into the container.
+1. From the **az1000202-container** blade, upload **Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.json** and **Labfiles\\AZ100\\Mod02\\az-100-02_azuredeploy.parameters.json** into the container.
 
 
 #### Task 4: Copy a container and blobs between Azure Storage accounts
@@ -226,10 +226,10 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, run the following commands:
 
    ```
-   $storageAccount1Name = (Get-AzureRmStorageAccount -ResourceGroupName 'az1000202-RG')[0].StorageAccountName
-   $storageAccount2Name = (Get-AzureRmStorageAccount -ResourceGroupName 'az1000203-RG')[0].StorageAccountName
-   $storageAccount1Key1 = (Get-AzureRmStorageAccountKey -ResourceGroupName 'az1000202-RG' -StorageAccountName $storageAccount1Name)[0].Value
-   $storageAccount2Key1 = (Get-AzureRmStorageAccountKey -ResourceGroupName 'az1000203-RG' -StorageAccountName $storageAccount2Name)[0].Value
+   $storageAccount1Name = (Get-AzStorageAccount -ResourceGroupName 'az1000202-RG')[0].StorageAccountName
+   $storageAccount2Name = (Get-AzStorageAccount -ResourceGroupName 'az1000203-RG')[0].StorageAccountName
+   $storageAccount1Key1 = (Get-AzStorageAccountKey -ResourceGroupName 'az1000202-RG' -StorageAccountName $storageAccount1Name)[0].Value
+   $storageAccount2Key1 = (Get-AzStorageAccountKey -ResourceGroupName 'az1000203-RG' -StorageAccountName $storageAccount2Name)[0].Value
    ```
 
    > **Note**: These commands set the values of variables representing the names of each storage account and their corresponding keys. You will use these values to copy blobs between storage accounts by using the AZCopy command line utility in the next step.

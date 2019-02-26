@@ -1,4 +1,4 @@
-What are we doing?**
+**What are we doing?**
 
 *	We are publishing the lab instructions and lab files on GitHub to allow for interaction between the course authors and MCTs. We hope this will help  keep the content current as the Azure platform changes.
 

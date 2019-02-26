@@ -9,13 +9,13 @@ All tasks in this lab are performed from the Azure portal (including a PowerShel
 
 Lab files: 
 
--  **F:\\Labfiles\\AZ100\\Mod03\\az-100-03_deploy_azure_vm.ps1**
+-  **Labfiles\\AZ100\\Mod03\\az-100-03_deploy_azure_vm.ps1**
 
--  **F:\\Labfiles\\AZ100\\Mod03\\az-100-03_azuredeploy.json**
+-  **Labfiles\\AZ100\\Mod03\\az-100-03_azuredeploy.json**
 
--  **F:\\Labfiles\\AZ100\\Mod03\\az-100-03_azuredeploy.parameters.json**
+-  **Labfiles\\AZ100\\Mod03\\az-100-03_azuredeploy.parameters.json**
 
--  **F:\\Labfiles\\AZ100\\Mod03\\az-100-03_install_iis_vmss.zip**
+-  **Labfiles\\AZ100\\Mod03\\az-100-03_install_iis_vmss.zip**
 
 ### Scenario
   
@@ -135,7 +135,7 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, run the following commands:
 
    ```
-   $resourceGroup = Get-AzureRmResourceGroup -Name 'az1000301-RG'
+   $resourceGroup = Get-AzResourceGroup -Name 'az1000301-RG'
    $location = $resourceGroup.Location
    ```
 
@@ -144,9 +144,9 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, run the following commands:
 
    ```
-   $availabilitySet = Get-AzureRmAvailabilitySet -ResourceGroupName $resourceGroup.ResourceGroupName -Name 'az1000301-avset0'
-   $vnet = Get-AzureRmVirtualNetwork -Name 'az1000301-vnet0' -ResourceGroupName $resourceGroup.ResourceGroupName
-   $subnetid = (Get-AzureRmVirtualNetworkSubnetConfig -Name 'subnet0' -VirtualNetwork $vnet).Id
+   $availabilitySet = Get-AzAvailabilitySet -ResourceGroupName $resourceGroup.ResourceGroupName -Name 'az1000301-avset0'
+   $vnet = Get-AzVirtualNetwork -Name 'az1000301-vnet0' -ResourceGroupName $resourceGroup.ResourceGroupName
+   $subnetid = (Get-AzVirtualNetworkSubnetConfig -Name 'subnet0' -VirtualNetwork $vnet).Id
    ```
 
    > **Note**: These commands set the values of variables designating the availability set, virtual network, and subnet into which you will deploy the new Azure VM
@@ -154,9 +154,9 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, run the following commands:
 
    ```
-   $nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -Name "$vmName-nsg"
-   $pip = New-AzureRmPublicIpAddress -Name "$vmName-ip" -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -AllocationMethod Dynamic 
-   $nic = New-AzureRmNetworkInterface -Name "$($vmName)$(Get-Random)" -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -SubnetId $subnetid -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
+   $nsg = New-AzNetworkSecurityGroup -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -Name "$vmName-nsg"
+   $pip = New-AzPublicIpAddress -Name "$vmName-ip" -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -AllocationMethod Dynamic 
+   $nic = New-AzNetworkInterface -Name "$($vmName)$(Get-Random)" -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -SubnetId $subnetid -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
    ```
 
    > **Note**: These commands create a new network security group, public IP address, and network interface that will be used by the new Azure VM
@@ -186,7 +186,7 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, run the following command:
 
    ```
-   $osDiskType = (Get-AzureRmResource -ResourceGroupName $resourceGroup.ResourceGroupName -ResourceType Microsoft.Compute/disks)[0].Sku.name
+   $osDiskType = (Get-AzResource -ResourceGroupName $resourceGroup.ResourceGroupName -ResourceType Microsoft.Compute/disks)[0].Sku.name
    ```
 
    > **Note**: This command sets the values of a variable designating the operating system disk type of the new Azure VM
@@ -194,12 +194,12 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, run the following commands:
 
    ```
-   $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $availabilitySet.Id
-   Add-AzureRmVMNetworkInterface -VM $vmConfig -Id $nic.Id
-   Set-AzureRmVMOperatingSystem -VM $vmConfig -Windows -ComputerName $vmName -Credential $adminCreds 
-   Set-AzureRmVMSourceImage -VM $vmConfig -PublisherName $publisherName -Offer $offerName -Skus $skuName -Version 'latest'
-   Set-AzureRmVMOSDisk -VM $vmConfig -Name "$($vmName)_OsDisk_1_$(Get-Random)" -StorageAccountType $osDiskType -CreateOption fromImage
-   Set-AzureRmVMBootDiagnostics -VM $vmConfig -Disable
+   $vmConfig = New-AzVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $availabilitySet.Id
+   Add-AzVMNetworkInterface -VM $vmConfig -Id $nic.Id
+   Set-AzVMOperatingSystem -VM $vmConfig -Windows -ComputerName $vmName -Credential $adminCreds 
+   Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Offer $offerName -Skus $skuName -Version 'latest'
+   Set-AzVMOSDisk -VM $vmConfig -Name "$($vmName)_OsDisk_1_$(Get-Random)" -StorageAccountType $osDiskType -CreateOption fromImage
+   Set-AzVMBootDiagnostics -VM $vmConfig -Disable
    ```
 
    > **Note**: These commands set up the properties of the Azure VM configuration object that will be used to provision the new Azure VM, including the VM size, its availability set, network interface, computer name, local Administrator credentials, the source image, the operating system disk, and boot diagnostics settings.
@@ -207,7 +207,7 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, run the following command:
 
    ```
-   New-AzureRmVM -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -VM $vmConfig
+   New-AzVM -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -VM $vmConfig
    ```
 
    > **Note**: This command initiates deployment of the new Azure VM
@@ -225,7 +225,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Custom deployment** blade, select the **Build your own template in the editor**.
 
-1. From the **Edit template** blade, load the template file **F:\\Labfiles\\AZ100\\Mod03\\az-100-03_azuredeploy.json**. 
+1. From the **Edit template** blade, load the template file **Labfiles\\AZ100\\Mod03\\az-100-03_azuredeploy.json**. 
 
    > **Note**: Review the content of the template and note that it defines deployment of two Azure VMs hosting Linux Ubuntu into an availability set and into the existing virtual network **az1000301-vnet0**.
 
@@ -233,7 +233,7 @@ The main tasks for this exercise are as follows:
 
 1. From the **Custom deployment** blade, navigate to the **Edit parameters** blade.
 
-1. From the **Edit parameters** blade, load the parameters file **F:\\Labfiles\\AZ100\\Mod03\\az-100-03_azuredeploy.parameters.json**. 
+1. From the **Edit parameters** blade, load the parameters file **Labfiles\\AZ100\\Mod03\\az-100-03_azuredeploy.parameters.json**. 
 
 1. Save the parameters and return to the **Custom deployment** blade. 
 
@@ -408,7 +408,7 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, run the following command, substituting the placeholder `<custom-label>` with any string which is likely to be unique and the placeholder `<location-of-az1000301-RG>` with the name of the Azure region in which you created the **az1000301-RG** resource group.
 
    ```
-   Test-AzureRmDnsAvailability -DomainNameLabel <custom-label> -Location '<location-of-az1000301-RG>'
+   Test-AzDnsAvailability -DomainNameLabel <custom-label> -Location '<location-of-az1000301-RG>'
    ```
 
 1. Verify that the command returned **True**. If not, rerun the same command with a different value of the `<custom-label>` until the command returns **True**. 
@@ -479,7 +479,7 @@ The main tasks for this exercise are as follows:
 
 1. From the **az1000303vmss0 - Extension** blade, add the **PowerShell Desired State Configuration** extension with the following settings:
 
-   > **Note**: The DSC configration module is available for upload from **F:\\Labfiles\\AZ100\\Mod03\\az-100-03_install_iis_vmss.zip**. The module contains the DSC configuration script that installs the Web Server (IIS) role.
+   > **Note**: The DSC configration module is available for upload from **Labfiles\\AZ100\\Mod03\\az-100-03_install_iis_vmss.zip**. The module contains the DSC configuration script that installs the Web Server (IIS) role.
 
     - Configuration Modules or Script: **"az-100-03_install_iis_vmss.zip"**
 
