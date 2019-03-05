@@ -371,7 +371,7 @@ The main tasks for this exercise are as follows:
 
 1. When prompted, authenticate by specifying the following values:
 
-    - User name: **student**
+    - User name: **Student**
 
     - Password: **Pa55w.rd1234**
 
