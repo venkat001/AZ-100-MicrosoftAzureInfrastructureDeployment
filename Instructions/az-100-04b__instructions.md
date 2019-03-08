@@ -125,7 +125,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Validate Azure DNS-based name resolution for the public domain
 
-1. On the DNS zone blade, note the list of the **Name servers that host the zone you created. You will use the first of them named **ns1-04.azure-dns.com** later in this task.
+1. On the DNS zone blade, note the list of the name servers that host the zone you created. You will use the first of them named **ns1-04.azure-dns.com** later in this task.
 
 1. From the lab virtual machine, start Command Prompt and run the following to launch **nslookup** in the interactive mode:
 
