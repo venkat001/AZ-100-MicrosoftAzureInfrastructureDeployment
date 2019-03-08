@@ -125,26 +125,14 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Validate Azure DNS-based name resolution for the public domain
 
-1. On the DNS zone blade, note the list of the name servers that host the zone you created. You will use the first of them named **ns1-04.azure-dns.com** later in this task.
+1. On the DNS zone blade, note the list of the name servers that host the zone you created. You will use the first of them named in the next step.
 
-1. From the lab virtual machine, start Command Prompt and run the following to launch **nslookup** in the interactive mode:
-
-   ```
-   nslookup
-   ```
-
-1. From the Command Prompt, run the following to designate the name server that will handle name resolution, which you identified in the first step of this task: 
+1. From the lab virtual machine, start Command Prompt and run the following to validate the name resolution of the two newly created DNS records (where `<custom_DNS_domain>` represents the custom DNS domain you created in the first task of this exercise and `<name_server>` represents the name of the DNS name server you identified in the previous step): 
 
    ```
-   server ns1-01.azure-dns.com
-   ```
-
-1. From the Command Prompt, run the following (where `<custom_DNS_domain>` represents the custom DNS domain you created in the first task of this exercise):
-
-   ```
-   mylabvmpip.<custom_DNS_domain>
-
-   myazurepip.<custom_DNS_domain>
+   nslookup mylabvmpip.<custom_DNS_domain> <name_server>
+   
+   nslookup myazurepip.<custom_DNS_domain> <name_server>
    ```
 
 1. Verify that the IP addresses returned match those you identified earlier in this task.
