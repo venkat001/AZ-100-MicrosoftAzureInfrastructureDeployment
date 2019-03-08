@@ -139,12 +139,12 @@ The main tasks for this exercise are as follows:
    server ns1-01.azure-dns.com
    ```
 
-1. From the lab virtual machine, start Command Prompt and run the following (where `<custom_DNS_domain>` represents the custom DNS domain you created in the first task of this exercise):
+1. From the Command Prompt, run the following (where `<custom_DNS_domain>` represents the custom DNS domain you created in the first task of this exercise):
 
    ```
-   nslookup mylabvmpip.<custom_DNS_domain>
+   mylabvmpip.<custom_DNS_domain>
 
-   nslookup myazurepip.<custom_DNS_domain>
+   myazurepip.<custom_DNS_domain>
    ```
 
 1. Verify that the IP addresses returned match those you identified earlier in this task.
