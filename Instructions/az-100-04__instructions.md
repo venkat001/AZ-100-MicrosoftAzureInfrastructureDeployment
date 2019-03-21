@@ -238,21 +238,21 @@ The main tasks for this exercise are as follows:
 
 1. From the **Create route table** blade, create a new route table with the following settings:
 
-    - Name: **az3000402-rt1**
+    - Name: **az1000402-rt1**
 
     - Subscription: the name of the Azure subscription you use for this lab
 
-    - Resource group: **az3000402-LabRG**
+    - Resource group: **az1000402-LabRG**
 
     - Location: the same Azure region in which you created the virtual networks
   
     - BGP route propagation: **Disabled**
 
-1. In the Azure portal, navigate to the **az3000402-rt1** blade.
+1. In the Azure portal, navigate to the **az1000402-rt1** blade.
 
-1. From the **az3000402-rt1** blade, display its **Routes** blade. 
+1. From the **az1000402-rt1** blade, display its **Routes** blade. 
 
-1. From the **az3000402-rt1 - Routes** blade, add to the route table a route with the following settings: 
+1. From the **az1000402-rt1 - Routes** blade, add to the route table a route with the following settings: 
 
     - Route name: **custom-route-to-az1000401-vnet1**
 
@@ -264,9 +264,9 @@ The main tasks for this exercise are as follows:
 
    > **Note**: **10.104.1.4** is the IP address of the network interface of **az1000401-vm2**, which will provide service chaining between the two virtual networks.
 
-1. From the **az3000402-rt1** blade, display its **Subnets** blade. 
+1. From the **az1000402-rt1** blade, display its **Subnets** blade. 
 
-1. From the **az3000402-rt1 - Subnets** blade, associate the route table **az3000402-rt1** with **subnet0** of **az1000402-vnet2**.
+1. From the **az1000402-rt1 - Subnets** blade, associate the route table **az1000402-rt1** with **subnet0** of **az1000402-vnet2**.
 
 
 #### Task 3: Configure routing in an Azure VM running Windows Server 2016
