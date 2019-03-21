@@ -13,7 +13,7 @@ Lab files:
 
 -  **Allfiles/Labfiles/AZ-100.4/az-100-04b_02_azuredeploy.json**
 
--  **Allfiles/Labfiles/AZ-100.4/az-100-04b_azuredeploy.parameters.json**
+-  **Allfiles/Labfiles/AZ-100.4/az-100-04_azuredeploy.parameters.json**
 
 
 ### Scenario
@@ -198,18 +198,18 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Deploy Azure VMs into virtual networks
 
-1. In the Cloud Shell pane, upload **az-100-04b_01_azuredeploy.json**, **az-100-04b_02_azuredeploy.json**, and **az-100-04b_azuredeploy.parameters.json** files.
+1. In the Cloud Shell pane, upload **az-100-04b_01_azuredeploy.json**, **az-100-04b_02_azuredeploy.json**, and **az-100-04_azuredeploy.parameters.json** files.
 
 1. In the Cloud Shell pane, run the following in order to deploy an Azure VM into the first virtual network:
 
    ```
-   New-AzResourceGroupDeployment -ResourceGroupName $rg2.ResourceGroupName -TemplateFile "$home/az-100-04b_01_azuredeploy.json" -TemplateParameterFile "$home/az-100-04b_azuredeploy.parameters.json" -AsJob
+   New-AzResourceGroupDeployment -ResourceGroupName $rg2.ResourceGroupName -TemplateFile "$home/az-100-04b_01_azuredeploy.json" -TemplateParameterFile "$home/az-100-04_azuredeploy.parameters.json" -AsJob
    ```
 
 1. In the Cloud Shell pane, run the following in order to deploy an Azure VM into the second virtual network:
 
    ```
-   New-AzResourceGroupDeployment -ResourceGroupName $rg2.ResourceGroupName -TemplateFile "$home/az-100-04b_02_azuredeploy.json" -TemplateParameterFile "$home/az-100-04b_azuredeploy.parameters.json" -AsJob
+   New-AzResourceGroupDeployment -ResourceGroupName $rg2.ResourceGroupName -TemplateFile "$home/az-100-04b_02_azuredeploy.json" -TemplateParameterFile "$home/az-100-04_azuredeploy.parameters.json" -AsJob
    ```
 
    > **Note**: Wait for both deployments to complete before you proceed to the next task. You can identify the state of the jobs by running the `Get-Job` cmdlet in the Cloud Shell pane.
