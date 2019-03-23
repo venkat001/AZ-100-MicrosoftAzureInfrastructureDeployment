@@ -198,11 +198,13 @@ The main tasks for this exercise are as follows:
 
 #### Task 3: Implement a policy that enforces resource tagging compliance.
 
-1. In the Azure portal, navigate to the **az10001b - Tagging initiative** blade.
+1. Navigate to the **Policy - Assignments** blade.
+
+1. From the **Policy - Definitions** blade, navigate to the **az10001b - Tagging initiative** blade.
 
 1. From the **az10001b - Tagging initiative** blade, navigate to its **Edit initiative definition** blade.
 
-1. Add the built-in policy definition named **Enforce tag and its default value** to the initiative and set its parameters to the following values:
+1. Add the built-in policy definition named **Enforce tag and its value** to the initiative and set its parameters to the following values:
 
     - Tag Name: **environment**
 
